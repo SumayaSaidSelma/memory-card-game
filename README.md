@@ -44,3 +44,10 @@
         a. Game will have 5 level 
         b. Each level will have additional card to make it more changing 
         c. If you will Last level #5 you win the game and the game is over!
+
+
+=> my stept to cteate the game 
+
+1. download all the photos that I need ot use for the game 
+2. name them in asstes folder 
+3. Create a seperate folder and js to rename or refere the pictures indie an array 
