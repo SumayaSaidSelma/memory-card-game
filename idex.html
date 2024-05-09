@@ -8,64 +8,34 @@
 </head>
 <body>
 
-        <h1>Welcome to memory game!! </h1>
-        <div class="grid-container"> </div>
-        <p>Score: <span class="score"></span> </p>
-        <div class="action">
-            <button onclick="restart()">Restart</button>
+        <h1>Memory Cards</h1>
+        <div class="name">
+        <input type="text" id="playerName" placeholder="Enter your name">
+        <p id="printName" style="display:none;"> </p>
+        <button id="startButton" disabled>Start Game</button>
         </div>
 
+        <div class="grid-container"> </div>
+        <!-- for picture an dicons https://www.flaticon.com/icons but i used canva to match the colors in my Hexagon and Pentagon-->
 
+        <div class="actions">
+            <p>Your Points: <span class="score"></span></p>
+            <p>Your level: <span class="level"></span></p>
+        </div>
 
+        <div class="actions">
+            <button onclick="restart()">Quit Game</button>
+            <!-- <button id="leve" style="display:none" onclick="level()"> Next Level </button>-->
+        </div>
 
+        <div class="instraction">
+            <p class="initialInst">How to play the game: </p> <br>
+            1. Select two cards! <br>
+            2. If the cards match they will dispear! <br>
+            3. If all cards disappear you will win and upgrade to next level! <br>
+            4. Quit butten will end the game!
+        </div>
 
-
-
-
-
- <!-- <div class="gameLevels">
-        <h1 class="levelNumber">1</h1>
-        <h2>12 Cards</h2>
-        <p>6 PAIRS</p>
-    </div>
-
-    <div class="gameLevels">
-        <h1 class="levelNumber">2</h1>
-        <h2>12 Cards</h2>
-        <p>6 PAIRS</p>
-    </div>
-
-
-    <div class="gameLevels">
-        <h1 class="levelNumber">3</h1>
-        <h2>12 Cards</h2>
-        <p>6 PAIRS</p>
-    </div>
-
-    <div class="gameLevels">
-        <h1 class="levelNumber">4</h1>
-        <h2>12 Cards</h2>
-        <p>6 PAIRS</p>
-    </div>
-
-    <div class="gameLevels">
-        <h1 class="levelNumber">5</h1>
-        <h2>12 Cards</h2>
-        <p>6 PAIRS</p>
-    </div>
-
-    <div class="function-buttons">
-<but>
-    </div>
-
-    <div class="instraction">
-        <h2>Instraction to play game</h2>
-        <p>6 PAIRS</p>
-    </div> -->
-
-
-
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 </html>

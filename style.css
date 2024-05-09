@@ -1,0 +1,131 @@
+body {
+    min-width: 100vh;
+    min-width: 100wh;
+    background: #12181f;
+    color: white ;
+    text-align: center;
+}
+
+@keyframes sparkle {
+    0% {color: #fff;}
+    25% {color: #07b572;}
+    50% {color: #fff;}
+    75% {color: #ff69b4;}
+    100% {color: #fff}
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700%;
+    font-size: 400%;
+    animation: sparkle 1s infinite;
+    margin: 50px 0 20px 0;
+}
+
+
+@keyframes sparklebody {
+  0% {color: #010101;}
+  25% {color: #07b572;}
+  50% {color: #010101;}
+  75% {color: #ff69b4;}
+  100% {color: #010101}
+}
+
+
+p, .name button, #playerName {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 40px; /* Add some padding for spacing */
+    border: 2px solid #07b572; /* Add a pink border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px 40px;
+    background-color: #fff5fd; /* Light pink background */
+    box-shadow: 10px 10px 10px rgba(222, 63, 190, 0.8); /* Add a soft shadow */
+    animation: sparklebody 3s infinite;
+  }
+
+.actions, .name {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px;
+  }
+
+  .actions button {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 60px;
+    border: 2px solid #07b572;
+    border-radius: 10px;
+    margin: 10px 80px;
+    background-color: #fff5fd;
+    box-shadow: 10px 10px 10px rgba(11, 163, 102, 0.8);
+    animation: sparklebody 3s infinite;
+  }
+
+  .instraction {
+    text-align: left;
+    font-size: 20px;
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: 2px solid #07b572; /* Add a pink border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 40px 360px;
+    background-color: #fff5fd; /* Light pink background */
+    box-shadow: 0 0 10px rgba(222, 63, 190, 0.8); /* Add a soft shadow */
+    animation: sparklebody 3s infinite;
+  }
+
+  .initialInst, #playerName {
+    text-align: center;
+  }
+
+  .grid-container {
+    display: grid;
+    justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(4, 140px);
+    grid-template-rows: repeat(2, calc(140px /2 * 3 ));
+  }
+
+  .card {
+    height: calc(140px /2 * 3 );
+    width: 140px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative ;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .front-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* I had to add bording-radius otherwise the pictures will have a corner */
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg); 
+  }
+
+  .front, .back {
+    backface-visibility: hidden; /* this makes the card-front hide while the card is fliped (card-back) */
+    position: absolute;  /* this allow the front and the back to overlap */
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .back {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='50.222' height='29.003' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(171, 81%, 47%, 1)'/><path d='M58.592-14.503h-16.74m6.277 3.627H56.5l4.188 7.25h-8.373zM60.686 3.623l-4.187 7.25h-8.372l4.187-7.25zM41.852-7.252l4.185 7.25-4.185 7.252L37.666 0zm25.11 7.25L58.593 14.5h-16.74L33.481-.001l8.371-14.501m16.74-.001l8.37 14.502m0 0h-16.74v0m-8.37-14.501l8.37 14.502-8.37 14.503M8.371-14.502H-8.37m6.276 3.627h8.371l4.188 7.25H2.093zM10.464 3.624l-4.186 7.25h-8.373l4.187-7.25zM-8.37-7.251L-4.185 0-8.37 7.252-12.556 0zM16.74 0l-8.37 14.502H-8.37L-16.742 0l8.371-14.501m16.74-.001L16.741-.001m0 0H.001v0m-8.37-14.501L0 0l-8.37 14.503m6.275 3.625h8.372l4.187 7.25H2.093zm12.558 14.499l-4.187 7.25h-8.372l4.187-7.25zM-8.371 21.752l4.185 7.25-4.185 7.252-4.185-7.251zm25.112 7.25L8.37 43.504H-8.37l-8.371-14.502 8.37-14.501M8.37 14.5l8.372 14.502m0 0H0v0M-8.37 14.502L0 29.003l-8.37 14.503M48.13 18.127l8.371.001 4.188 7.25h-8.373zm12.557 14.5l-4.187 7.249-8.372.001 4.187-7.25zM41.852 21.751l4.185 7.25-4.185 7.252-4.186-7.252zm25.11 7.25l-8.37 14.502h-16.74L33.48 29.003m25.11-14.503l8.372 14.503m0 0h-16.74v0m-8.371-14.501l8.37 14.501-8.37 14.503M33.482 0h-16.74m6.276 3.627l8.371.001 4.188 7.25h-8.373zm12.557 14.5l-4.187 7.249-8.372.001 4.187-7.25zM16.741 7.25l4.185 7.25-4.185 7.252-4.186-7.252zm25.11 7.25l-8.37 14.502h-16.74m25.11-14.502h-16.74v0M16.742 0l8.37 14.502-8.37 14.503'  stroke-linecap='square' stroke-width='1' stroke='hsla(314, 78%, 60%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-162,-36.012)' fill='url(%23a)'/></svg>");
+    /* to create a background patern https://pattern.monster/japanese-pattern-6/ */
+    background-position: center center;
+    background-size: cover;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    transform: rotateY(180deg);
+}
+
