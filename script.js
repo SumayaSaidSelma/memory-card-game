@@ -62,7 +62,6 @@ startButton.addEventListener("click", function() {
     }); */
 
 
-
 startButton.addEventListener("click", function() {
   if (playerNameInput.value.trim() === "") {
     alert("Please enter your name to start the game.");
@@ -75,6 +74,7 @@ startButton.addEventListener("click", function() {
     startGame();
   }
 });
+
 
 function startGame() {
 // this is the hardest part I had to learn all JSON just for this :(
@@ -109,22 +109,34 @@ function shuffleCards() {
 }
 
 function generateCards() {
-  for (let card of cards) {
-    const cardElement = document.createElement("div");
-    cardElement.classList.add("card");
+  for (let card of cards) { // create array of cards 
+    const cardElement = document.createElement("div");  // for each card we create a div, all those divs are saved in the varibale cardElement
+    cardElement.classList.add("card"); // 
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
       <div class="front">
         <img class="front-image" src=${card.image} />
       </div>
-      <div class="back"></div>
+      <div class="back"></div> 
     `;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
 
-function flipCard() {
+
+/* 
+    const cards = [
+      { name: "card1", image: ".assets/image1.jpg" },
+      { name: "card2", image: ".assets/image2.jpg" },
+      { name: "card3", image: ".assets/image3.jpg" },
+      { name: "card4", image: ".assets/image4.jpg" },
+      // and more cards 
+    ];
+*/
+
+
+  function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
@@ -136,10 +148,9 @@ function flipCard() {
   }
 
   secondCard = this;
-  score++;
   document.querySelector(".score").textContent = score;
   lockBoard = true;
-
+  score++;
   checkForMatch();
 }
 
@@ -169,8 +180,8 @@ function unflipCards() {
 
 
 function resetBoard() {
-  firstCard = null;
-  secondCard = null;
+  firstCard = null; // represents the absence of any object value
+  secondCard = null; // no seocnd card selected 
   lockBoard = false;
 }
 
@@ -179,6 +190,7 @@ function restart() {
   resetBoard();
   shuffleCards();
   score = 0;
+  level = 0;
   document.querySelector(".score").textContent = score;
   gridContainer.innerHTML = "";
   generateCards();
